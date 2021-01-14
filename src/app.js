@@ -9,6 +9,7 @@ const getWeather = require('./utils/weather');
 // console.log(path.join(__dirname, '..', 'public')); //complete path to the file
 
 const app = express();
+const port = precess.env.PORT || 3000;
 const publicDirectory = path.join(__dirname, '../public');
 const viewsPath = path.join(__dirname, '../templates/views');
 const partialPaths = path.join(__dirname, '..', '/templates/partials');
@@ -108,6 +109,6 @@ app.get('*', (req, res) => {
 // });
 
 
-app.listen(3000, () => {
-  console.log('Server running!');
+app.listen(port, () => {
+  console.log('Server running on port ' + port);
 });
